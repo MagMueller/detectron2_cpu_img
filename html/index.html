@@ -1,31 +1,34 @@
 <!DOCTYPE html>
 <html>
- <head>
+
+<head>
   <meta charset="utf-8">
   <title>Get image</title>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  
 
- </head>
- <body>
-  <form  id = "form" enctype="multipart/form-data" method="post">
-   <label for="files" class="btn">Get image</label>
-   <p><input type="file" name="f" id="file" title="Get image">
-   <input type="submit" value="Submit">
-   <input type="hidden" name="rotation" id="rotation" value="0"/>
-    <img id = "loading" height = "25px" /></p>
-  </form> 
+
+</head>
+
+<body>
+  <form id="form" enctype="multipart/form-data" method="post">
+    <label for="files" class="btn">Get image</label>
+    <p><input type="file" name="f" id="file" title="Get image">
+      <input type="submit" value="Submit">
+      <input type="hidden" name="rotation" id="rotation" value="0" />
+      <img id="loading" height="25px" />
+    </p>
+  </form>
   <p>
   <div class="img-preview" style="display: none;">
     <button id="rleft">Left</button>
     <button id="rright">Right</button>
     <div id="imgPreview"></div>
-</div>
+  </div>
   </p>
-  <img id ="imagebox" width = "99%"/>
+  <img id="imagebox" width="30%" />
   <pre id="result"></pre>
- </body> 
+</body>
 
- <script src = "{{ url_for('static', filename = 'js/script.js') }}"></script>
+<script src="{{ url_for('static', filename = 'js/script.js') }}"></script>
 
 </html>

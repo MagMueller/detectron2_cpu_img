@@ -1,0 +1,3 @@
+/solar_roof_model_data/*.pth
+model_cache/
+/log

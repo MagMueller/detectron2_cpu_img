@@ -24,17 +24,17 @@ RUN pip install -U cython \
 	textblob \
 	pyyaml \
 	numpy \
-;
+	;
 
-RUN pip install face-recognition \
-				jsons \
-;
+#RUN pip install face-recognition jsons;
+RUN pip install jsons;
 
 # Python service
-RUN mkdir -p /home/detec_srv /home/detec_srv/html /home/detec_srv/log /home/detec_srv/static/js
-COPY service.py /home/detec_srv
+RUN mkdir -p /home/detec_srv /home/detec_srv/html /home/detec_srv/log /home/detec_srv/static/js /home/detec_srv/solar_roof_model_data
+COPY service_predict.py /home/detec_srv
 COPY html/ /home/detec_srv/html
 COPY static/js/ /home/detec_srv/static/js
+COPY solar_roof_model_data/ /home/detec_srv/solar_roof_model_data
 
 WORKDIR /home/detec_srv/
-CMD ["python3","service.py"]
+CMD ["python3","service_predict.py"]
